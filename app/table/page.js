@@ -54,10 +54,12 @@ export default function UsersPage() {
       return 0;
     });
 
-    return sortedUsers.slice(
+    const usersPagination = sortedUsers.slice(
       (currentPage - 1) * pageSize,
       currentPage * pageSize
     );
+
+    return usersPagination;
   }, [users, filter, sort, sortOrder, currentPage, pageSize]);
 
   const handleSort = (key) => {
